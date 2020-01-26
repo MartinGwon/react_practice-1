@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,600,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  height: 100%;
+  font-family: "Quicksand";
+}
+
+.movie {
+  display: inline-block;
+  color: white;
+  padding: 20px 15px;
+  overflow: hidden;
+  background-color: rgb(25, 25, 25);
+  border: 4px solid #feeea6;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  width: 600px;
+  margin-right: 30px;
+}
+
+.poster-container {
+  display: flex;
+  justify-content: space-between;
+}
+.movie__movie-year {
+  margin-top: 10px;
+}
+.movie__movie-summary {
+  margin-left: 30px;
+}
+
+.movie__movie-genres {
+}
+
+.movie__movie-poster {
+  width: 230px;
+  height: 350px;
+  border-radius: 10px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+li {
+  margin-right: 15px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.movie__movie-year {
+  font-size: 15px;
+  font-weight: 400;
+}
+.movie p {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.movie:hover {
+  animation: pump 0.2s ease-in-out forwards;
+}
+
+@keyframes pump {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(-1%);
+  }
+}
