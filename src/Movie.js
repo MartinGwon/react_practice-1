@@ -21,7 +21,7 @@ function Movie({ title, summary, poster, year, genres }) {
           title={title}
           class="movie__movie-poster"
         ></img>
-        <p class="movie__movie-summary">{summary}</p>
+        <p class="movie__movie-summary">{summary.slice(0, 300)}...More</p>
       </div>
     </div>
   );

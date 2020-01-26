@@ -18,3 +18,7 @@ h2 {
   justify-content: space-around;
   align-items: center;
 }
+
+.loader__text {
+  color: white;
+}
