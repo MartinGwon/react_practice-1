@@ -1,29 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "./Movie.css";
 
-function Movie({ title, summary, poster, year, genres }) {
+function Movie({ id, title, summary, poster, year, genres }) {
   return (
-    <div class="movie">
-      <div class="movie__movie-title">{title}</div>
-      <div class="movie__movie-year">({year})</div>
-      <ul class="movie__movie-genres">
-        {genres.map((tomato, index) => (
-          <li key={index} class="movie__movie-genres-name">
-            {tomato}
-          </li>
-        ))}
-      </ul>
-      <div class="poster-container">
-        <img
-          src={poster}
-          alt={title}
-          title={title}
-          class="movie__movie-poster"
-        ></img>
-        <p class="movie__movie-summary">{summary.slice(0, 300)}...More</p>
+    <Link
+      to={{
+        pathname: `movie/${id}`,
+        state: {
+          year,
+          title,
+          summary,
+          poster,
+          genres
+        }
+      }}
+    >
+      <div class="movie">
+        <div class="movie__movie-title">{title}</div>
+        <div class="movie__movie-year">({year})</div>
+        <ul class="movie__movie-genres">
+          {genres.map((tomato, index) => (
+            <li key={index} class="movie__movie-genres-name">
+              {tomato}
+            </li>
+          ))}
+        </ul>
+        <div class="poster-container">
+          <img
+            src={poster}
+            alt={title}
+            title={title}
+            class="movie__movie-poster"
+          ></img>
+          <p class="movie__movie-summary">{summary.slice(0, 300)}...More</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
